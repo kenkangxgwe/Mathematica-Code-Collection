@@ -1,0 +1,139 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4136,        130]
+NotebookOptionsPosition[      3844,        115]
+NotebookOutlinePosition[      4197,        131]
+CellTagsIndexPosition[      4154,        128]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"For", " ", "the", " ", "table", " ", "having", " ", "two", " ", 
+    RowBox[{"demensions", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Data", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<%Yourdir%\\\\*.txt\>\"", ",", "\"\<Table\>\""}], "]"}]}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"Curve", "=", 
+     RowBox[{"Interpolation", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{"Method", "\[Rule]", "\"\<Spline\>\""}]}], 
+      RowBox[{"(*", 
+       RowBox[{",", 
+        RowBox[{"Method", "\[Rule]", "\"\<Hermite\>\""}]}], "*)"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"ListPlot", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<x\>\"", ",", "\"\<y\>\""}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Curve", "[", "x", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"First", "[", 
+          RowBox[{"First", "[", "Data", "]"}], "]"}], ",", 
+         RowBox[{"First", "[", 
+          RowBox[{"Last", "[", "Data", "]"}], "]"}]}], "}"}]}], "]"}]}], 
+    "]"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.637578304574744*^9, 3.6375784249998083`*^9}, {
+  3.637578604005843*^9, 3.6375787487534857`*^9}, {3.6375787958181796`*^9, 
+  3.6375787960481615`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "For", " ", "two", " ", "tables", " ", "each", " ", "having", " ", "only", 
+    " ", "one", " ", 
+    RowBox[{"demension", "."}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"DataX", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<%Yourdir%\\\\*.txt\>\"", ",", "\"\<Table\>\""}], "]"}]}], 
+    ";"}], "\n", 
+   RowBox[{
+    RowBox[{"DataY", "=", 
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<%Yourdir%\\\\*.txt\>\"", ",", "\"\<Table\>\""}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Data", "=", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"DataX", ",", "DataY"}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Curve", "=", 
+     RowBox[{"Interpolation", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{"Method", "\[Rule]", "\"\<Spline\>\""}]}], 
+      RowBox[{"(*", 
+       RowBox[{",", 
+        RowBox[{"Method", "\[Rule]", "\"\<Hermite\>\""}]}], "*)"}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Show", "[", 
+    RowBox[{
+     RowBox[{"ListPlot", "[", 
+      RowBox[{"Data", ",", 
+       RowBox[{"AxesLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<x\>\"", ",", "\"\<y\>\""}], "}"}]}]}], "]"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"Curve", "[", "x", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"First", "[", 
+          RowBox[{"First", "[", "Data", "]"}], "]"}], ",", 
+         RowBox[{"First", "[", 
+          RowBox[{"Last", "[", "Data", "]"}], "]"}]}], "}"}]}], "]"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.637578729315838*^9, 3.637578811048382*^9}, {
+  3.6375800554464593`*^9, 3.637580085234047*^9}, {3.6375801493345933`*^9, 
+  3.637580151596932*^9}}]
+},
+WindowSize->{667, 641},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (2013\:5e742\:670813\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1446, 39, 152, "Input"],
+Cell[2006, 61, 1834, 52, 172, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
